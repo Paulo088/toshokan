@@ -1,32 +1,50 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+		<sidebar-menu :menu="menu" collapsed="true"/>
+		<router-view></router-view>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { SidebarMenu } from 'vue-sidebar-menu'
+import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
-#nav {
-  padding: 30px;
+export default {
+	name: 'app',
+	components: { SidebarMenu },
+	data () {
+		return {
+			menu: [
+				{
+					header: true,
+					title: 'Toshokan',
+					hiddenOnCollapse: true
+				},
+				{
+					title: 'Início',
+					href: '/',
+					icon: 'fas fa-user'
+				},
+				{
+					title: 'Usuário',
+					icon: 'fas fa-user',
+					child: [
+						{
+							href: 'login',
+							title: 'Entrar'
+						},
+						{
+							href: 'register',
+							title: 'Cadastrar-se'
+						}
+					]
+				}
+			]
+		}
+	}
 }
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style scoped>
+	@import '../node_modules/bulma/css/bulma.css';
 </style>
