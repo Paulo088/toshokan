@@ -10,14 +10,14 @@
 	<h3 class="title is-3 text-color">Mais Lidos</h3>
 	<div class="columns">
 		<div v-for="book in mostRead" :key="book" class="column">
-			<img :src="getImgUrl(book.img)"/>
+			<img class="container-img-most-read" :src="getImgUrl(book.img)"/>
 			{{ book.name }}
 		</div>
 	</div>
 	<h3 class="title is-3 text-color">Todos os livros</h3>
 	<div class="columns">
 		<div v-for="book in allBooks" :key="book" class="column">
-			<img :src="getImgUrl(book.img)"/>
+			<img class="container-img-all-books" :src="getImgUrl(book.img)"/>
 			{{ book.name }}
 		</div>
 	</div>
@@ -151,7 +151,7 @@ export default {
 	},
 	methods: {
 		getImgUrl (book) {
-			var images = require.context('../assets/livros', false, /\.jpg$/)
+			var images = require.context('../../assets/livros', false, /\.jpg$/)
 			return images('./' + book)
 		}
 	}
@@ -171,4 +171,16 @@ export default {
 	.margin-menu {
 		padding-left: 5rem;
 	}
+
+	/* .container-img-best-seller {
+		height: 15rem;
+	}
+
+	.container-img-most-read {
+		height: 20rem;
+	}
+
+	.container-img-all-books {
+		height: 15rem;
+	} */
 </style>

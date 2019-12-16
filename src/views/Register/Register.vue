@@ -5,6 +5,12 @@
       <div class="columns is-centered">
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
           <form action="" class="box">
+						<div class="field">
+              <label for="" class="label">Username</label>
+              <div class="control has-icons-left">
+                <input type="text" placeholder="e.g. patinho" class="input" required>
+              </div>
+            </div>
             <div class="field">
               <label for="" class="label">Email</label>
               <div class="control has-icons-left">
@@ -23,17 +29,23 @@
                 </span>
               </div>
             </div>
-            <div class="field">
-              <label for="" class="checkbox">
-                <input type="checkbox">
-               Remember me
-              </label>
+						<div class="field">
+              <label for="" class="label">Confirm Password</label>
+              <div class="control has-icons-left">
+                <input type="password" placeholder="*******" class="input" required>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+            </div>
+						<div class="field">
+              <label for="" class="label">Birth</label>
+              <div class="control has-icons-left">
+                <input type="text" placeholder="e.g. 11/12/2000" class="input" required>
+              </div>
             </div>
             <div class="field">
-              <button class="button is-success">
-                Login
-              </button>
-							<button class="button is-primary btn-padding">
+							<button class="button is-primary">
                 Cadastrar-se
               </button>
             </div>
@@ -47,18 +59,14 @@
 
 <script>
 export default {
-	name: 'login'
+	name: 'register'
 }
 </script>
 
 <style scoped>
 	section {
-		background-image: url('../assets/login-fundo.jpg');
+		background-image: url('../../assets/login-fundo.jpg');
 		background-attachment: fixed;
 		background-position: center;
-	}
-
-	.btn-padding {
-		margin-left: 1rem;
 	}
 </style>
