@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-		<sidebar-menu :menu="menu" collapsed="true"/>
+		<sidebar-menu :menu="menu" :collapsed=true>
+			<span slot="toggle-icon">
+				<i class="fa fa-circle"></i>
+			</span>
+			<span slot="dropdown-icon">
+				<i class="fa fa-caret-down"></i>
+			</span>
+		</sidebar-menu>
 		<router-view></router-view>
   </div>
 </template>
@@ -23,11 +30,11 @@ export default {
 				{
 					title: 'Início',
 					href: '/',
-					icon: 'fas fa-user'
+					icon: 'fa fa-home'
 				},
 				{
 					title: 'Usuário',
-					icon: 'fas fa-user',
+					icon: 'fa fa-user',
 					child: [
 						{
 							href: 'login',
