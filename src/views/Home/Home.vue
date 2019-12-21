@@ -1,34 +1,35 @@
 <template>
 <div id="home" class="margin-menu">
 	<h3 class="title is-3 text-color">Mais Vendidos</h3>
-	<div class="columns">
-		<div v-for="book in bestSeller" :key="book" class="column">
-			<img :src="getImgUrl(book.img)"/>
-			{{ book.name }}
-		</div>
-	</div>
+	<vueper-slides class="no-shadow" :visible-slides="6" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
+		<vueper-slide :link="urlFor(book.name)" v-for="book in bestSeller" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		</vueper-slide>
+	</vueper-slides>
+
 	<h3 class="title is-3 text-color">Mais Lidos</h3>
-	<div class="columns">
-		<div v-for="book in mostRead" :key="book" class="column">
-			<img class="container-img-most-read" :src="getImgUrl(book.img)"/>
-			{{ book.name }}
-		</div>
-	</div>
+	<vueper-slides class="no-shadow" :visible-slides="7" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
+		<vueper-slide v-for="book in mostRead" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		</vueper-slide>
+	</vueper-slides>
+
 	<h3 class="title is-3 text-color">Todos os livros</h3>
-	<div class="columns">
-		<div v-for="book in allBooks" :key="book" class="column">
-			<img class="container-img-all-books" :src="getImgUrl(book.img)"/>
-			{{ book.name }}
-		</div>
-	</div>
+	<vueper-slides class="no-shadow" :visible-slides="8" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
+		<vueper-slide v-for="book in allBooks" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		</vueper-slide>
+	</vueper-slides>
 </div>
 </template>
 
 <script>
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+
 export default {
-  name: 'home',
+	name: 'home',
+	components: { VueperSlides, VueperSlide },
   data () {
     return {
+			teste: `/#/login/${42}`,
       allBooks: [
         {
 					name: 'O Que Aconteceu Com Annie',
@@ -153,7 +154,16 @@ export default {
 		getImgUrl (book) {
 			var images = require.context('../../assets/livros', false, /\.jpg$/)
 			return images('./' + book)
+		},
+		details (book) {
+			console.log(book)
+			this.$router.push("{name: 'login'}")
+		},
+		urlFor (id) {
+			return `/#/login/${id}`
 		}
+	},
+	computed: {
 	}
 }
 </script>
