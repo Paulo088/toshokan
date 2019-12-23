@@ -2,7 +2,7 @@
 <div id="home" class="margin-menu">
 	<h3 class="title is-3 text-color">Mais Vendidos</h3>
 	<vueper-slides class="no-shadow" :visible-slides="6" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
-		<vueper-slide :link="urlFor(book.name)" v-for="book in bestSeller" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		<vueper-slide :link="details(book)" v-for="book in bestSeller" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
 		</vueper-slide>
 	</vueper-slides>
 
@@ -29,9 +29,8 @@ export default {
 	components: { VueperSlides, VueperSlide },
   data () {
     return {
-			teste: `/#/login/${42}`,
       allBooks: [
-        {
+				{
 					name: 'O Que Aconteceu Com Annie',
 					img: 'annie.jpg'
 				},
@@ -115,7 +114,7 @@ export default {
 				}
 			],
 			bestSeller: [
-        {
+				{
 					name: 'O Que Aconteceu Com Annie',
 					img: 'annie.jpg'
 				},
@@ -156,14 +155,8 @@ export default {
 			return images('./' + book)
 		},
 		details (book) {
-			console.log(book)
-			this.$router.push("{name: 'login'}")
-		},
-		urlFor (id) {
-			return `/#/login/${id}`
+			return `/#/details/${book.name}/${book.img}`
 		}
-	},
-	computed: {
 	}
 }
 </script>
