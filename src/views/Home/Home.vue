@@ -8,13 +8,13 @@
 
 	<h3 class="title is-3 text-color">Mais Lidos</h3>
 	<vueper-slides class="no-shadow" :visible-slides="7" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
-		<vueper-slide v-for="book in mostRead" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		<vueper-slide :link="details(book)" v-for="book in mostRead" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
 		</vueper-slide>
 	</vueper-slides>
 
 	<h3 class="title is-3 text-color">Todos os livros</h3>
 	<vueper-slides class="no-shadow" :visible-slides="8" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
-		<vueper-slide v-for="book in allBooks" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
+		<vueper-slide :link="details(book)" v-for="book in allBooks" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
 		</vueper-slide>
 	</vueper-slides>
 </div>
