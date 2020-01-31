@@ -40,7 +40,7 @@ export default {
 			return images('./' + book)
 		},
 		details (book) {
-			return `/#/details/${book.name}/${book.img}`
+			return `/#/details/${book.id}`
 		}
 	},
 	created () {

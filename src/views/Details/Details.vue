@@ -1,12 +1,21 @@
 <template>
 <div id="detail" class="margin-menu">
 	<div class="columns">
-		<div class="column"></div>
 		<div class="column">
-			<img :src="getImgUrl(book.img)">
-			<h3>{{book.name}}</h3>
+			<div class="columns">
+				<div class="column"></div>
+				<div class="column">
+					<img :src="getImgUrl(book.img)">
+					<h3>{{book.name}}</h3>
+				</div>
+				<div class="column"></div>
+			</div>
+			<h5>Sinopse: {{book.sinopse}}</h5>
+			<br>
+			<button class="button">
+				Comprar
+			</button>
 		</div>
-		<div class="column"></div>
 	</div>
 </div>
 </template>
@@ -27,8 +36,10 @@ export default {
 		}
 	},
 	created () {
-		this.book.name = this.$route.params.name
-		this.book.img = this.$route.params.img
+		this.axios.get('http://localhost:3000/books/' + this.$route.params.id)
+			.then((response) => {
+				this.book = response.data
+		})
 	}
 }
 </script>
@@ -37,7 +48,7 @@ export default {
 	#detail {
 		background-color: black;
 		color: #ffffff;
-		padding: 3rem 3rem 3rem 3rem;
+		padding: 4rem 4rem 4rem 4rem;
 	}
 
 	.text-color {
