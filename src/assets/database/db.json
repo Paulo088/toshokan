@@ -1,0 +1,88 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "name": "O Que Aconteceu Com Annie",
+            "img": "annie.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 2,
+            "name": "Alice no Pais das Maravilhas",
+            "img": "apm.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 3,
+            "name": "Corte de Espinhos e Rosas",
+            "img": "cer.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 4,
+            "name": "Doutor Sono",
+            "img": "docsono.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 5,
+            "name": "Êxtase",
+            "img": "fallen.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 6,
+            "name": "Paixão",
+            "img": "fallen2.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 7,
+            "name": "A Guerra Que Salvou A Minha Vida",
+            "img": "gsmv.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 8,
+            "name": "Harry Potter E A Câmara Secreta",
+            "img": "hp2.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 9,
+            "name": "Harry Potter E O Prisioneiro de Azkaban",
+            "img": "hp3.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 10,
+            "name": "Harry Potter E As Reliquias da Morte",
+            "img": "hp7.jpg",
+            "category": "bestSeller"
+        },
+        {
+            "id": 11,
+            "name": "IT: A Coisa",
+            "img": "it.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 12,
+            "name": "Príncipe Dracula",
+            "img": "pd.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 13,
+            "name": "The Kiss Of Deception",
+            "img": "tkd.jpg",
+            "category": "mostRead"
+        },
+        {
+            "id": 14,
+            "name": "Trono de Vidro",
+            "img": "tv.jpg",
+            "category": "bestSeller"
+        }
+    ]
+}

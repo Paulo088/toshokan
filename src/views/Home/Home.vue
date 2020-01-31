@@ -29,125 +29,10 @@ export default {
 	components: { VueperSlides, VueperSlide },
   data () {
     return {
-      allBooks: [
-				{
-					name: 'O Que Aconteceu Com Annie',
-					img: 'annie.jpg'
-				},
-				{
-					name: 'Alice no Pais das Maravilhas',
-					img: 'apm.jpg'
-				},
-				{
-					name: 'Corte de Espinhos e Rosas',
-					img: 'cer.jpg'
-				},
-				{
-					name: 'Doutro Sono',
-					img: 'docsono.jpg'
-				},
-				{
-					name: 'Êxtase',
-					img: 'fallen.jpg'
-				},
-				{
-					name: 'Paixão',
-					img: 'fallen2.jpg'
-				},
-				{
-					name: 'A Guerra Que Salvou A Minha Vida',
-					img: 'gsmv.jpg'
-				},
-				{
-					name: 'Harry Potter E A Câmara Secreta',
-					img: 'hp2.jpg'
-				},
-				{
-					name: 'Harry Potter E O Prisioneiro de Azkaban',
-					img: 'hp3.jpg'
-				},
-				{
-					name: 'Harry Potter E As Reliquias da Morte',
-					img: 'hp7.jpg'
-				},
-				{
-					name: 'IT: A Coisa',
-					img: 'it.jpg'
-				},
-				{
-					name: 'Príncipe Dracula',
-					img: 'pd.jpg'
-				},
-				{
-					name: 'The Kiss Of Deception',
-					img: 'tkd.jpg'
-				},
-				{
-					name: 'Trono de Vidro',
-					img: 'tv.jpg'
-				}
-			],
-			mostRead: [
-				{
-					name: 'Alice no Pais das Maravilhas',
-					img: 'apm.jpg'
-				},
-				{
-					name: 'Êxtase',
-					img: 'fallen.jpg'
-				},
-				{
-					name: 'Paixão',
-					img: 'fallen2.jpg'
-				},
-				{
-					name: 'IT: A Coisa',
-					img: 'it.jpg'
-				},
-				{
-					name: 'Príncipe Dracula',
-					img: 'pd.jpg'
-				},
-				{
-					name: 'The Kiss Of Deception',
-					img: 'tkd.jpg'
-				}
-			],
-			bestSeller: [
-				{
-					name: 'O Que Aconteceu Com Annie',
-					img: 'annie.jpg'
-				},
-				{
-					name: 'Corte de Espinhos e Rosas',
-					img: 'cer.jpg'
-				},
-				{
-					name: 'Doutro Sono',
-					img: 'docsono.jpg'
-				},
-				{
-					name: 'A Guerra Que Salvou A Minha Vida',
-					img: 'gsmv.jpg'
-				},
-				{
-					name: 'Harry Potter E A Câmara Secreta',
-					img: 'hp2.jpg'
-				},
-				{
-					name: 'Harry Potter E O Prisioneiro de Azkaban',
-					img: 'hp3.jpg'
-				},
-				{
-					name: 'Harry Potter E As Reliquias da Morte',
-					img: 'hp7.jpg'
-				},
-				{
-					name: 'Trono de Vidro',
-					img: 'tv.jpg'
-				}
-      ]
-    }
+			allBooks: [],
+			bestSeller: [],
+			mostRead: []
+		}
 	},
 	methods: {
 		getImgUrl (book) {
@@ -157,6 +42,18 @@ export default {
 		details (book) {
 			return `/#/details/${book.name}/${book.img}`
 		}
+	},
+	created () {
+		this.axios.get('http://localhost:3000/books').then((response) => {
+			this.allBooks = response.data
+			for (let book of this.allBooks) {
+				if (book.category === 'mostRead') {
+					this.mostRead.push(book)
+				} else if (book.category === 'bestSeller') {
+					this.bestSeller.push(book)
+				}
+			}
+		})
 	}
 }
 </script>
