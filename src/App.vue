@@ -37,11 +37,11 @@ export default {
 					icon: 'fa fa-user',
 					child: [
 						{
-							href: 'login',
+							href: '/login',
 							title: 'Entrar'
 						},
 						{
-							href: 'register',
+							href: '/register',
 							title: 'Cadastrar-se'
 						}
 					]

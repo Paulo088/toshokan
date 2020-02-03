@@ -6,6 +6,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSidebarMenu from 'vue-sidebar-menu'
+import VueSimpleAlert from 'vue-simple-alert'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
 Vue.use(VueSidebarMenu)
+Vue.use(VueSimpleAlert)
 
 new Vue({
   router,

@@ -6,9 +6,9 @@
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
           <form action="" class="box">
             <div class="field">
-              <label for="" class="label">Email</label>
+              <label for="" class="label">Username</label>
               <div class="control has-icons-left">
-                <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required>
+                <input v-model="username" type="text" placeholder="e.g. PatoDonald01" class="input" required>
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -17,7 +17,7 @@
             <div class="field">
               <label for="" class="label">Password</label>
               <div class="control has-icons-left">
-                <input type="password" placeholder="*******" class="input" required>
+                <input v-model="password" type="password" placeholder="*******" class="input" required>
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
@@ -30,10 +30,10 @@
               </label>
             </div>
             <div class="field">
-              <button class="button is-success">
+              <button @click="login()" class="button is-success">
                 Login
               </button>
-							<button class="button is-primary btn-padding">
+							<button @click="register()" type="button" class="button is-primary btn-padding">
                 Cadastrar-se
               </button>
             </div>
@@ -47,7 +47,41 @@
 
 <script>
 export default {
-	name: 'login'
+	name: 'login',
+	data () {
+		return {
+			username: '',
+			password: ''
+		}
+	},
+	methods: {
+		login () {
+			if (this.username !== '' && this.password !== '') {
+				this.axios.get(`http://localhost:3000/users?username=${this.username}&password=${this.password}`).then(data => {
+					if (!data.data || data.data.length === 0) {
+						this.$alert('Usuário ou senha incorreto!')
+						return
+					}
+					this.$alert('Bem vindo ' + data.data[0].name + '!')
+					console.log('user:', data.data[0])
+					this.$router.push({ name: 'home' })
+				}).catch(err => {
+					this.$alert('Erro ao logar!')
+					this.resetInputs()
+					console.error('Login error:', err)
+				})
+			} else {
+				this.$alert('Os campos devem ser preenchidos!')
+			}
+		},
+		register () {
+			this.$router.push({ name: 'register' })
+		},
+		resetInputs () {
+			this.username = ''
+			this.password = ''
+		}
+	}
 }
 </script>
 

@@ -1,118 +1,131 @@
 {
-    "books": [
-        {
-            "id": 1,
-            "name": "O Que Aconteceu Com Annie",
-            "img": "annie.jpg",
-            "category": "bestSeller",
-            "sinopse": "\"Quando minha irmã tinha oito anos, ela sumiu.Na época, achei que não poderia haver coisa pior. E então ela voltou.\"\nQuando Joe Thorne era adolescente, sua irmã mais nova desapareceu. Vinte e cinco anos depois, um e-mail anônimo o leva mais uma vez ao passado: \"Eu sei o que aconteceu com sua irmã. Está acontecendo de novo.\"\nAtolado em dívidas e bem longe do vilarejo onde cresceu, Joe precisa escapar das pessoas perigosas que estão atrás dele, mas também vê a oportunidade de resolver o que arrasta consigo há mais de duas décadas. Retornar a Arnhill parece a única opção.\nMas voltar também significa abrir velhas feridas e reencontrar pessoas e lugares que ele nunca mais pensou que veria. Afinal, alguns segredos são grandes demais — e Joe não faz ideia de onde está se metendo.\nNeste suspense de ares sobrenaturais, o leitor é carregado por reviravoltas sombrias que o deixam na expectativa até o fim. O que aconteceu com Annie é uma viagem ao lugar mais escuro de um passado que precisa ser esquecido."
-        },
-        {
-            "id": 2,
-            "name": "Alice no Pais das Maravilhas",
-            "img": "apm.jpg",
-            "category": "mostRead",
-            "sinopse": "Ainda garotinha, Alice Kingsleigh visitou um lugar mágico pela primeira vez e não tinha mais lembranças sobre o local a não ser em seus sonhos. Em uma festa da nobreza, a jovem vê um coelho branco. Alice o segue e cai em um buraco, indo parar em um mundo estranho: o País das Maravilhas. Lá, ela reencontra personagens que estavam guardados em sua memória através dos sonhos."
-        },
-        {
-            "id": 3,
-            "name": "Corte de Espinhos e Rosas",
-            "img": "cer.jpg",
-            "category": "bestSeller",
-            "sinopse": "O aguardado segundo volume da saga iniciada em Corte de espinhos e rosas, da mesma autora da série Trono de vidro Nessa continuação, a jovem humana que morreu nas garras de Amarantha, Feyre, assume seu lugar como Quebradora da Maldição e dona dos poderes de sete Grão-Feéricos."
-        },
-        {
-            "id": 4,
-            "name": "Doutor Sono",
-            "img": "docsono.jpg",
-            "category": "bestSeller",
-            "sinopse": "Na infância, Danny Torrance sobreviveu a uma tentativa de homicídio por parte do pai, um escritor perturbado pelos espíritos malignos do Hotel Overlook. Já adulto, traumatizado e alcoólatra. Danny se estabelece em uma pequena cidade, onde consegue um emprego no hospital local. Sua paz, porém, está com os dias contados a partir de quando cria um vínculo telepático com Abra, uma menina com poderes tão fortes quanto aqueles que ele bloqueia dentro de si."
-        },
-        {
-            "id": 5,
-            "name": "Êxtase",
-            "img": "fallen.jpg",
-            "category": "mostRead",
-            "sinopse": "Depois de ver seu amor definhar por causa de um amor perdido, Raven Kendrick jurou nunca entregar seu coração. Mas quando sua vida se transforma em um escandalo, ela é forçada a aceitar uma proposta de casamento do sensual prorietário da casa de jogos mais conhecida de Londres."
-        },
-        {
-            "id": 6,
-            "name": "Paixão",
-            "img": "fallen2.jpg",
-            "category": "mostRead",
-            "sinopse": "Após uma verdadeira eternidade para encontrar seu verdadeiro amor, a mortal Luce está determinada a destravar o seu futuro viajando por suas vidas passadas. Antes que Luce e Daniel se conhecessem na Sword & Cross e tivessem lutado contra Imortais e Párias, eles viveram muitas vidas. Luce não sabe mais o que pensar."
-        },
-        {
-            "id": 7,
-            "name": "A Guerra Que Salvou A Minha Vida",
-            "img": "gsmv.jpg",
-            "category": "bestSeller",
-            "sinopse": "A Guerra que Salvou a Minha Vida contará a história de Ada, uma menina inglesa de 9 anos que tem Pé Torto Congênito. Ela mora com o irmão Jamie e a mãe em Londres de 1939, inicio da Segunda Guerra Mundial."
-        },
-        {
-            "id": 8,
-            "name": "Harry Potter E A Câmara Secreta",
-            "img": "hp2.jpg",
-            "category": "bestSeller",
-            "sinopse": "Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático."
-        },
-        {
-            "id": 9,
-            "name": "Harry Potter E O Prisioneiro de Azkaban",
-            "img": "hp3.jpg",
-            "category": "bestSeller",
-            "sinopse": "O terceiro ano de Harry Potter em Hogwarts começa mal quando ele descobre que o assassino Sirius Black escapou da prisão de Azkaban e está empenhado em matá-lo. Enquanto o gato de Hermione atormenta o rato doente de Ron, um bando de dementadores são enviados para proteger a escola de Sirius Black. Um professor misterioso ajuda Harry a aprender a se defender."
-        },
-        {
-            "id": 10,
-            "name": "Harry Potter E As Reliquias da Morte",
-            "img": "hp7.jpg",
-            "category": "bestSeller",
-            "sinopse": "Sem a orientação e proteção de seus professores, Harry, Rony e Hermione iniciam uma missão para destruir as horcruxes, que são as fontes da imortalidade de Voldemort. Embora devam confiar um no outro mais do que nunca, forças das trevas ameaçam separá-los. Os Comensais da Morte de Voldemort tomaram o controle do Ministério da Magia e de Hogwarts, e eles estão procurando por Harry enquanto ele e seus amigos se preparam para o confronto final."
-        },
-        {
-            "id": 11,
-            "name": "IT: A Coisa",
-            "img": "it.jpg",
-            "category": "mostRead",
-            "sinopse": "O mais profundo e tenebroso medo. Naquele verão, eles enfrentaram pela primeira vez a Coisa, um ser sobrenatural e maligno que deixou terríveis marcas de sangue em Derry. Quase trinta anos depois, os amigos voltam a se encontrar. Uma nova onda de terror tomou a pequena cidade."
-        },
-        {
-            "id": 12,
-            "name": "Príncipe Dracula",
-            "img": "pd.jpg",
-            "category": "mostRead",
-            "sinopse": "Bastou que ele a visse pela primeira vez para que se apaixonasse, principalmente por ela ser incrivelmente parecida com a noiva de Drácula, que fora assassinada. Ele a sequestra e a leva para seu castelo, onde tenta conquistar o coração da moça."
-        },
-        {
-            "id": 13,
-            "name": "The Kiss Of Deception",
-            "img": "tkd.jpg",
-            "category": "mostRead",
-            "sinopse": "Lia se encontrará perante traições e segredos que vão desvendar um novo mundo ao seu redor. O romance de Mary E. Pearson evoca culturas do nosso mundo e as transpõe para a história de forma magnífica."
-        },
-        {
-            "id": 14,
-            "name": "Trono de Vidro",
-            "img": "tv.jpg",
-            "category": "bestSeller",
-            "sinopse": "A magia há muito abandonou Adarlan. Um perverso rei governa de seu trono de vidro, punindo impiedosamente as minorias rebeldes, quando uma assassina chega ao castelo."
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "name": "Paulo Roberto",
-            "username": "paulo088",
-            "password": "123456",
-            "permissions": "admin"
-        },
-        {
-            "id": 2,
-            "name": "Alice Feitosa",
-            "username": "alice123",
-            "password": "654321",
-            "permissions": "admin"
-        }
-    ]
+  "books": [
+    {
+      "id": 1,
+      "name": "O Que Aconteceu Com Annie",
+      "img": "annie.jpg",
+      "category": "bestSeller",
+      "sinopse": "\"Quando minha irmã tinha oito anos, ela sumiu.Na época, achei que não poderia haver coisa pior. E então ela voltou.\"\nQuando Joe Thorne era adolescente, sua irmã mais nova desapareceu. Vinte e cinco anos depois, um e-mail anônimo o leva mais uma vez ao passado: \"Eu sei o que aconteceu com sua irmã. Está acontecendo de novo.\"\nAtolado em dívidas e bem longe do vilarejo onde cresceu, Joe precisa escapar das pessoas perigosas que estão atrás dele, mas também vê a oportunidade de resolver o que arrasta consigo há mais de duas décadas. Retornar a Arnhill parece a única opção.\nMas voltar também significa abrir velhas feridas e reencontrar pessoas e lugares que ele nunca mais pensou que veria. Afinal, alguns segredos são grandes demais — e Joe não faz ideia de onde está se metendo.\nNeste suspense de ares sobrenaturais, o leitor é carregado por reviravoltas sombrias que o deixam na expectativa até o fim. O que aconteceu com Annie é uma viagem ao lugar mais escuro de um passado que precisa ser esquecido."
+    },
+    {
+      "id": 2,
+      "name": "Alice no Pais das Maravilhas",
+      "img": "apm.jpg",
+      "category": "mostRead",
+      "sinopse": "Ainda garotinha, Alice Kingsleigh visitou um lugar mágico pela primeira vez e não tinha mais lembranças sobre o local a não ser em seus sonhos. Em uma festa da nobreza, a jovem vê um coelho branco. Alice o segue e cai em um buraco, indo parar em um mundo estranho: o País das Maravilhas. Lá, ela reencontra personagens que estavam guardados em sua memória através dos sonhos."
+    },
+    {
+      "id": 3,
+      "name": "Corte de Espinhos e Rosas",
+      "img": "cer.jpg",
+      "category": "bestSeller",
+      "sinopse": "O aguardado segundo volume da saga iniciada em Corte de espinhos e rosas, da mesma autora da série Trono de vidro Nessa continuação, a jovem humana que morreu nas garras de Amarantha, Feyre, assume seu lugar como Quebradora da Maldição e dona dos poderes de sete Grão-Feéricos."
+    },
+    {
+      "id": 4,
+      "name": "Doutor Sono",
+      "img": "docsono.jpg",
+      "category": "bestSeller",
+      "sinopse": "Na infância, Danny Torrance sobreviveu a uma tentativa de homicídio por parte do pai, um escritor perturbado pelos espíritos malignos do Hotel Overlook. Já adulto, traumatizado e alcoólatra. Danny se estabelece em uma pequena cidade, onde consegue um emprego no hospital local. Sua paz, porém, está com os dias contados a partir de quando cria um vínculo telepático com Abra, uma menina com poderes tão fortes quanto aqueles que ele bloqueia dentro de si."
+    },
+    {
+      "id": 5,
+      "name": "Êxtase",
+      "img": "fallen.jpg",
+      "category": "mostRead",
+      "sinopse": "Depois de ver seu amor definhar por causa de um amor perdido, Raven Kendrick jurou nunca entregar seu coração. Mas quando sua vida se transforma em um escandalo, ela é forçada a aceitar uma proposta de casamento do sensual prorietário da casa de jogos mais conhecida de Londres."
+    },
+    {
+      "id": 6,
+      "name": "Paixão",
+      "img": "fallen2.jpg",
+      "category": "mostRead",
+      "sinopse": "Após uma verdadeira eternidade para encontrar seu verdadeiro amor, a mortal Luce está determinada a destravar o seu futuro viajando por suas vidas passadas. Antes que Luce e Daniel se conhecessem na Sword & Cross e tivessem lutado contra Imortais e Párias, eles viveram muitas vidas. Luce não sabe mais o que pensar."
+    },
+    {
+      "id": 7,
+      "name": "A Guerra Que Salvou A Minha Vida",
+      "img": "gsmv.jpg",
+      "category": "bestSeller",
+      "sinopse": "A Guerra que Salvou a Minha Vida contará a história de Ada, uma menina inglesa de 9 anos que tem Pé Torto Congênito. Ela mora com o irmão Jamie e a mãe em Londres de 1939, inicio da Segunda Guerra Mundial."
+    },
+    {
+      "id": 8,
+      "name": "Harry Potter E A Câmara Secreta",
+      "img": "hp2.jpg",
+      "category": "bestSeller",
+      "sinopse": "Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático."
+    },
+    {
+      "id": 9,
+      "name": "Harry Potter E O Prisioneiro de Azkaban",
+      "img": "hp3.jpg",
+      "category": "bestSeller",
+      "sinopse": "O terceiro ano de Harry Potter em Hogwarts começa mal quando ele descobre que o assassino Sirius Black escapou da prisão de Azkaban e está empenhado em matá-lo. Enquanto o gato de Hermione atormenta o rato doente de Ron, um bando de dementadores são enviados para proteger a escola de Sirius Black. Um professor misterioso ajuda Harry a aprender a se defender."
+    },
+    {
+      "id": 10,
+      "name": "Harry Potter E As Reliquias da Morte",
+      "img": "hp7.jpg",
+      "category": "bestSeller",
+      "sinopse": "Sem a orientação e proteção de seus professores, Harry, Rony e Hermione iniciam uma missão para destruir as horcruxes, que são as fontes da imortalidade de Voldemort. Embora devam confiar um no outro mais do que nunca, forças das trevas ameaçam separá-los. Os Comensais da Morte de Voldemort tomaram o controle do Ministério da Magia e de Hogwarts, e eles estão procurando por Harry enquanto ele e seus amigos se preparam para o confronto final."
+    },
+    {
+      "id": 11,
+      "name": "IT: A Coisa",
+      "img": "it.jpg",
+      "category": "mostRead",
+      "sinopse": "O mais profundo e tenebroso medo. Naquele verão, eles enfrentaram pela primeira vez a Coisa, um ser sobrenatural e maligno que deixou terríveis marcas de sangue em Derry. Quase trinta anos depois, os amigos voltam a se encontrar. Uma nova onda de terror tomou a pequena cidade."
+    },
+    {
+      "id": 12,
+      "name": "Príncipe Dracula",
+      "img": "pd.jpg",
+      "category": "mostRead",
+      "sinopse": "Bastou que ele a visse pela primeira vez para que se apaixonasse, principalmente por ela ser incrivelmente parecida com a noiva de Drácula, que fora assassinada. Ele a sequestra e a leva para seu castelo, onde tenta conquistar o coração da moça."
+    },
+    {
+      "id": 13,
+      "name": "The Kiss Of Deception",
+      "img": "tkd.jpg",
+      "category": "mostRead",
+      "sinopse": "Lia se encontrará perante traições e segredos que vão desvendar um novo mundo ao seu redor. O romance de Mary E. Pearson evoca culturas do nosso mundo e as transpõe para a história de forma magnífica."
+    },
+    {
+      "id": 14,
+      "name": "Trono de Vidro",
+      "img": "tv.jpg",
+      "category": "bestSeller",
+      "sinopse": "A magia há muito abandonou Adarlan. Um perverso rei governa de seu trono de vidro, punindo impiedosamente as minorias rebeldes, quando uma assassina chega ao castelo."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Paulo Roberto",
+      "username": "paulo088",
+      "email": "paulo@gmail.com",
+      "password": "123456",
+      "permissions": "admin",
+      "books": []
+    },
+    {
+      "id": 2,
+      "name": "Alice Feitosa",
+      "username": "alice123",
+      "email": "alice@gmail.com",
+      "password": "654321",
+      "permissions": "admin",
+      "books": []
+    },
+    {
+      "name": "João da Silva",
+      "username": "jojo",
+      "email": "jojo@gmail.com",
+      "password": "123",
+      "permissions": "user",
+      "books": [],
+      "id": 3
+    }
+  ]
 }
