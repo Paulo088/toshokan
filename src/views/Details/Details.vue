@@ -26,7 +26,9 @@ export default {
 	components: {},
   data () {
     return {
-			book: {}
+			book: {
+				img: 'semcapa.jpg'
+			}
 		}
 	},
 	methods: {
@@ -35,7 +37,7 @@ export default {
 			this.book = res.data
 		},
 		getImgUrl (book) {
-			var images = require.context('../../assets/livros', false, /\.jpg$/)
+			var images = require.context('@/assets/livros', false, /\.jpg$/)
 			return images('./' + book)
 		}
 	},
