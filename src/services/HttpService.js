@@ -30,8 +30,8 @@ export class HttpService {
 		return res
 	}
 
-	path (id, data) {
-		let res = axios.path(this.url + '/' + id, data)
+	patch (id, data) {
+		let res = axios.patch(this.url + '/' + id, data)
 		return res
 	}
 

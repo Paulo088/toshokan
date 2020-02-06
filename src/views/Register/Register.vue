@@ -52,7 +52,7 @@
             </div>
             <div class="field">
 							<button @click="save()" class="button is-primary">
-                Cadastrar-se
+                {{btnSave}}
               </button>
 							<button @click="login()" type="button" class="button is-success btn-padding">
                 Login
@@ -79,20 +79,31 @@ export default {
 				replyPassword: '',
 				permissions: 'user',
 				books: []
-			}
+			},
+			btnSave: 'Cadastre-se'
 		}
 	},
 	methods: {
 		async save () {
 			if (this.user.password === this.user.replyPassword) {
 				delete (this.user.replyPassword)
-				this.$services.users.post(this.user).then(data => {
-					this.$alert('Cadastrado com sucesso!')
-					this.resetInputs()
-				}).catch(err => {
-					this.$alert('Erro ao cadastrar!')
-					console.error('register error:', err)
-				})
+				if (this.btnSave === 'Cadastre-se') {
+					this.$services.users.post(this.user).then(data => {
+						this.$alert('Cadastrado com sucesso!')
+						this.resetInputs()
+					}).catch(err => {
+						this.$alert('Erro ao cadastrar!')
+						console.error('register error:', err)
+					})
+				} else {
+					this.$services.users.patch(this.$store.state.user.id, this.user).then(data => {
+						this.$alert('Salvo com sucesso!')
+						this.$store.commit('setUser', data.data)
+					}).catch(err => {
+						this.$alert('Erro ao salvar!')
+						console.error('save error:', err)
+					})
+				}
 			} else {
 				this.$alert('As senhas não são iguais.')
 			}
@@ -103,9 +114,33 @@ export default {
 			this.user.email = ''
 			this.user.password = ''
 			this.user.replyPassword = ''
+			this.btnSave = 'Cadastre-se'
+		},
+		loadFields () {
+			this.user.name = this.$store.state.user.name
+			this.user.username = this.$store.state.user.username
+			this.user.email = this.$store.state.user.email
+			this.user.password = this.$store.state.user.password
+			this.user.replyPassword = this.$store.state.user.password
+			this.btnSave = 'Salvar'
 		},
 		login () {
 			this.$router.push({ name: 'login' })
+		},
+		verifRoute () {
+			if (this.$route.name === 'edit') {
+				this.loadFields()
+			} else {
+				this.resetInputs()
+			}
+		}
+	},
+	created () {
+		this.verifRoute()
+	},
+	watch: {
+		'$route.path' () {
+			this.verifRoute()
 		}
 	}
 }

@@ -106,7 +106,7 @@
       "username": "paulo088",
       "email": "paulo@gmail.com",
       "password": "123456",
-      "permissions": "admin",
+      "permissions": "user",
       "books": []
     },
     {
