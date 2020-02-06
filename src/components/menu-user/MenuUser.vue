@@ -8,14 +8,14 @@
 							<transition name="slide-fade">
 								<!-- Header Navigation Menu Icons -->
 								<button class="header--button" v-if="show" key="on" @click="show = false">
-									<svg viewBox="0 0 24 24" class="header--icon">
+									<svg viewBox="1 -1 24 24" class="header--icon">
 										<title>Close</title>
 										<path d="M0 0h24v24H0V0z" fill="none" />
 										<path fill="currentColor" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z" />
 									</svg>
 								</button>
 								<button class="header--button" v-else key="off" @click="show = true">
-									<svg viewBox="0 0 24 24" class="header--icon">
+									<svg viewBox="1 -1 24 24" class="header--icon">
 										<title>Navigation Menu</title>
 										<path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z" />
 									</svg>
@@ -116,10 +116,12 @@ export default {
 }
 
 #menuUser {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
+	background-color: #000;
+  position: fixed;
+	z-index: 9999;
+  top: 0.5%;
+  right: 2%;
+	border-radius: 50%;
 }
 
 :root {
@@ -142,21 +144,21 @@ body {
 hr {
   border: 0;
   height: 0;
-  margin: 1.5rem 0;
+  margin: 0rem 0;
   border-top: 1px solid var(--color-gray);
 }
 
 // Header Menu
 
 .header {
-  padding: 1rem 5rem 2rem 5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   &__nav {
     position: relative;
   }
   &__navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   &__item {
     padding: 1rem;
@@ -171,7 +173,7 @@ hr {
     position: absolute;
     margin: 0;
     padding: 0;
-    color: gray;
+    color: white;
     cursor: pointer;
     border: 1px solid transparent;
     background-color: transparent;

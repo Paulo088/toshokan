@@ -91,6 +91,7 @@ export default {
 					this.$services.users.post(this.user).then(data => {
 						this.$alert('Cadastrado com sucesso!')
 						this.resetInputs()
+						this.$router.push({ name: 'login' })
 					}).catch(err => {
 						this.$alert('Erro ao cadastrar!')
 						console.error('register error:', err)
@@ -99,6 +100,7 @@ export default {
 					this.$services.users.patch(this.$store.state.user.id, this.user).then(data => {
 						this.$alert('Salvo com sucesso!')
 						this.$store.commit('setUser', data.data)
+						this.$router.push({ name: 'home' })
 					}).catch(err => {
 						this.$alert('Erro ao salvar!')
 						console.error('save error:', err)
@@ -114,6 +116,7 @@ export default {
 			this.user.email = ''
 			this.user.password = ''
 			this.user.replyPassword = ''
+			this.user.permissions = 'user'
 			this.btnSave = 'Cadastre-se'
 		},
 		loadFields () {
@@ -122,6 +125,7 @@ export default {
 			this.user.email = this.$store.state.user.email
 			this.user.password = this.$store.state.user.password
 			this.user.replyPassword = this.$store.state.user.password
+			this.user.permissions = this.$store.state.user.permissions
 			this.btnSave = 'Salvar'
 		},
 		login () {

@@ -72,7 +72,7 @@ export default {
 
 	.margin-menu {
 		padding-top: 0rem;
-		padding-left: 5rem;
+		padding-left: 0rem;
 	}
 
 	/* .container-img-best-seller {

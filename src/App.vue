@@ -8,6 +8,7 @@
 				<i class="fa fa-caret-down"></i>
 			</span>
 		</sidebar-menu>
+		<h2 class="title is-2 text-color">Toshokan</h2>
 		<MenuUser v-if="$store.state.logged"></MenuUser>
 		<router-view></router-view>
   </div>
@@ -61,4 +62,14 @@ export default {
 
 <style scoped>
 	@import '../node_modules/bulma/css/bulma.css';
+
+	#app {
+		background-color: black;
+		color: white;
+		padding: 0rem 3rem 0rem 5rem;
+	}
+
+	.text-color {
+		color: white;
+	}
 </style>

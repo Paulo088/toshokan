@@ -106,7 +106,7 @@
       "username": "paulo088",
       "email": "paulo@gmail.com",
       "password": "123456",
-      "permissions": "user",
+      "permissions": "admin",
       "books": []
     },
     {
@@ -117,15 +117,6 @@
       "password": "654321",
       "permissions": "admin",
       "books": []
-    },
-    {
-      "name": "João da Silva",
-      "username": "jojo",
-      "email": "jojo@gmail.com",
-      "password": "123",
-      "permissions": "user",
-      "books": [],
-      "id": 3
     }
   ]
 }
