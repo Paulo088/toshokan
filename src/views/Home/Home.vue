@@ -35,6 +35,17 @@ export default {
 		}
 	},
 	methods: {
+		async loadBooks () {
+			let res = await this.$services.books.getAll()
+			this.allBooks = res.data
+			for (let book of this.allBooks) {
+				if (book.category === 'mostRead') {
+					this.mostRead.push(book)
+				} else if (book.category === 'bestSeller') {
+					this.bestSeller.push(book)
+				}
+			}
+		},
 		getImgUrl (book) {
 			var images = require.context('../../assets/livros', false, /\.jpg$/)
 			return images('./' + book)
@@ -44,16 +55,7 @@ export default {
 		}
 	},
 	created () {
-		this.axios.get('http://localhost:3000/books').then((response) => {
-			this.allBooks = response.data
-			for (let book of this.allBooks) {
-				if (book.category === 'mostRead') {
-					this.mostRead.push(book)
-				} else if (book.category === 'bestSeller') {
-					this.bestSeller.push(book)
-				}
-			}
-		})
+		this.loadBooks()
 	}
 }
 </script>

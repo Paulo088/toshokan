@@ -83,10 +83,10 @@ export default {
 		}
 	},
 	methods: {
-		save () {
+		async save () {
 			if (this.user.password === this.user.replyPassword) {
 				delete (this.user.replyPassword)
-				this.axios.post('http://localhost:3000/users', this.user).then(data => {
+				this.$services.users.post(this.user).then(data => {
 					this.$alert('Cadastrado com sucesso!')
 					this.resetInputs()
 				}).catch(err => {

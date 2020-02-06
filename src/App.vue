@@ -8,6 +8,7 @@
 				<i class="fa fa-caret-down"></i>
 			</span>
 		</sidebar-menu>
+		<MenuUser v-if="$store.state.logged"></MenuUser>
 		<router-view></router-view>
   </div>
 </template>
@@ -15,10 +16,11 @@
 <script>
 import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+import MenuUser from './components/menu-user/MenuUser'
 
 export default {
 	name: 'app',
-	components: { SidebarMenu },
+	components: { SidebarMenu, MenuUser },
 	data () {
 		return {
 			menu: [
@@ -47,6 +49,11 @@ export default {
 					]
 				}
 			]
+		}
+	},
+	computed: {
+		showMenu () {
+			return this.store.state.logged
 		}
 	}
 }

@@ -30,16 +30,17 @@ export default {
 		}
 	},
 	methods: {
+		async getBook () {
+			let res = await this.$services.books.get(this.$route.params.id)
+			this.book = res.data
+		},
 		getImgUrl (book) {
 			var images = require.context('../../assets/livros', false, /\.jpg$/)
 			return images('./' + book)
 		}
 	},
 	created () {
-		this.axios.get('http://localhost:3000/books/' + this.$route.params.id)
-			.then((response) => {
-				this.book = response.data
-		})
+		this.getBook()
 	}
 }
 </script>

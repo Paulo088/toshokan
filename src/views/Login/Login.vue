@@ -55,15 +55,16 @@ export default {
 		}
 	},
 	methods: {
-		login () {
+		async login () {
 			if (this.username !== '' && this.password !== '') {
-				this.axios.get(`http://localhost:3000/users?username=${this.username}&password=${this.password}`).then(data => {
+				this.$services.users.login(this.username, this.password).then(data => {
 					if (!data.data || data.data.length === 0) {
 						this.$alert('Usuário ou senha incorreto!')
 						return
 					}
 					this.$alert('Bem vindo ' + data.data[0].name + '!')
-					console.log('user:', data.data[0])
+					this.$store.commit('login')
+					this.$store.commit('setUser', data.data[0])
 					this.$router.push({ name: 'home' })
 				}).catch(err => {
 					this.$alert('Erro ao logar!')
