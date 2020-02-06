@@ -116,7 +116,10 @@ export default {
 }
 
 #menuUser {
-	background-color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
 }
 
 :root {
@@ -146,7 +149,7 @@ hr {
 // Header Menu
 
 .header {
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 1rem 5rem 2rem 5rem;
   &__nav {
     position: relative;
   }
