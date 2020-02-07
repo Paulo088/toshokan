@@ -54,7 +54,7 @@
 							<button @click="save()" class="button is-primary">
                 {{btnSave}}
               </button>
-							<button @click="login()" type="button" class="button is-success btn-padding">
+							<button v-if="edit" @click="login()" type="button" class="button is-success btn-padding">
                 Login
               </button>
             </div>
@@ -80,7 +80,8 @@ export default {
 				permissions: 'user',
 				books: []
 			},
-			btnSave: 'Cadastre-se'
+			btnSave: 'Cadastre-se',
+			edit: true
 		}
 	},
 	methods: {
@@ -133,8 +134,10 @@ export default {
 		},
 		verifRoute () {
 			if (this.$route.name === 'edit') {
+				this.edit = false
 				this.loadFields()
 			} else {
+				this.edit = true
 				this.resetInputs()
 			}
 		}

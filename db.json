@@ -117,6 +117,15 @@
       "password": "654321",
       "permissions": "admin",
       "books": []
+    },
+    {
+      "name": "João",
+      "username": "jojo",
+      "email": "jo@jo.jo",
+      "password": "123",
+      "permissions": "user",
+      "books": [],
+      "id": 3
     }
   ]
 }

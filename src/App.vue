@@ -8,7 +8,6 @@
 				<i class="fa fa-caret-down"></i>
 			</span>
 		</sidebar-menu>
-		<h2 class="title is-2 text-color">Toshokan</h2>
 		<MenuUser v-if="$store.state.logged"></MenuUser>
 		<router-view></router-view>
   </div>
@@ -56,6 +55,41 @@ export default {
 		showMenu () {
 			return this.store.state.logged
 		}
+	},
+	watch: {
+		'$store.state.user' () {
+			if (this.$store.state.user !== null) {
+				this.menu[2] = {
+					title: 'Livros',
+					icon: 'fa fa-book',
+					child: [
+						{
+							href: '/book/register',
+							title: 'Cadastrar'
+						},
+						{
+							href: '/book/delete',
+							title: 'Remover'
+						}
+					]
+				}
+			} else {
+				this.menu[2] = {
+					title: 'Usuário',
+					icon: 'fa fa-user',
+					child: [
+						{
+							href: '/login',
+							title: 'Entrar'
+						},
+						{
+							href: '/register',
+							title: 'Cadastrar-se'
+						}
+					]
+				}
+			}
+		}
 	}
 }
 </script>
@@ -64,12 +98,7 @@ export default {
 	@import '../node_modules/bulma/css/bulma.css';
 
 	#app {
-		background-color: black;
-		color: white;
-		padding: 0rem 3rem 0rem 5rem;
-	}
-
-	.text-color {
+		background-color: #000;
 		color: white;
 	}
 </style>

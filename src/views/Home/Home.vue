@@ -1,5 +1,6 @@
 <template>
 <div id="home" class="margin-menu">
+	<h2 class="title is-2 text-color">Toshokan</h2>
 	<h3 class="title is-3 text-color">Mais Vendidos</h3>
 	<vueper-slides class="no-shadow" :visible-slides="6" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
 		<vueper-slide :link="details(book)" v-for="book in bestSeller" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
@@ -7,13 +8,13 @@
 	</vueper-slides>
 
 	<h3 class="title is-3 text-color">Mais Lidos</h3>
-	<vueper-slides class="no-shadow" :visible-slides="7" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
+	<vueper-slides class="no-shadow" :visible-slides="6" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
 		<vueper-slide :link="details(book)" v-for="book in mostRead" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
 		</vueper-slide>
 	</vueper-slides>
 
 	<h3 class="title is-3 text-color">Todos os livros</h3>
-	<vueper-slides class="no-shadow" :visible-slides="8" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
+	<vueper-slides class="no-shadow" :visible-slides="6" slide-multiple :slide-ratio="1/4" :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2 } }">
 		<vueper-slide :link="details(book)" v-for="book in allBooks" :key="book.name" :image="getImgUrl(book.img)" style="margin-left: 0.2rem;">
 		</vueper-slide>
 	</vueper-slides>
@@ -71,8 +72,7 @@ export default {
 	}
 
 	.margin-menu {
-		padding-top: 0rem;
-		padding-left: 0rem;
+		padding: 0rem 3rem 0rem 5rem;
 	}
 
 	/* .container-img-best-seller {
