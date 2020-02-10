@@ -60,7 +60,7 @@
       "id": 9,
       "name": "Harry Potter E O Prisioneiro de Azkaban",
       "img": "hp3.jpg",
-      "category": "bestSeller",
+      "category": "",
       "sinopse": "O terceiro ano de Harry Potter em Hogwarts começa mal quando ele descobre que o assassino Sirius Black escapou da prisão de Azkaban e está empenhado em matá-lo. Enquanto o gato de Hermione atormenta o rato doente de Ron, um bando de dementadores são enviados para proteger a escola de Sirius Black. Um professor misterioso ajuda Harry a aprender a se defender."
     },
     {
@@ -81,7 +81,7 @@
       "id": 12,
       "name": "Príncipe Dracula",
       "img": "pd.jpg",
-      "category": "mostRead",
+      "category": "",
       "sinopse": "Bastou que ele a visse pela primeira vez para que se apaixonasse, principalmente por ela ser incrivelmente parecida com a noiva de Drácula, que fora assassinada. Ele a sequestra e a leva para seu castelo, onde tenta conquistar o coração da moça."
     },
     {

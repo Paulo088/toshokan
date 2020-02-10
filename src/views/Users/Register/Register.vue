@@ -54,7 +54,7 @@
 							<button @click="save()" class="button is-primary">
                 {{btnSave}}
               </button>
-							<button v-if="edit" @click="login()" type="button" class="button is-success btn-padding">
+							<button v-if="!edit" @click="login()" type="button" class="button is-success btn-padding">
                 Login
               </button>
             </div>
@@ -81,7 +81,7 @@ export default {
 				books: []
 			},
 			btnSave: 'Cadastre-se',
-			edit: true
+			edit: false
 		}
 	},
 	methods: {
@@ -92,7 +92,7 @@ export default {
 					this.$services.users.post(this.user).then(data => {
 						this.$alert('Cadastrado com sucesso!')
 						this.resetInputs()
-						this.$router.push({ name: 'login' })
+						this.$router.push({ name: 'userLogin' })
 					}).catch(err => {
 						this.$alert('Erro ao cadastrar!')
 						console.error('register error:', err)
@@ -130,14 +130,14 @@ export default {
 			this.btnSave = 'Salvar'
 		},
 		login () {
-			this.$router.push({ name: 'login' })
+			this.$router.push({ name: 'userLogin' })
 		},
 		verifRoute () {
-			if (this.$route.name === 'edit') {
-				this.edit = false
+			if (this.$route.name === 'userEdit') {
+				this.edit = true
 				this.loadFields()
 			} else {
-				this.edit = true
+				this.edit = false
 				this.resetInputs()
 			}
 		}
@@ -155,7 +155,7 @@ export default {
 
 <style scoped>
 	section {
-		background-image: url('../../assets/login-fundo.jpg');
+		background-image: url('../../../assets/login-fundo.jpg');
 		background-attachment: fixed;
 		background-position: center;
 	}

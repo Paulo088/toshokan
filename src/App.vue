@@ -39,11 +39,11 @@ export default {
 					icon: 'fa fa-user',
 					child: [
 						{
-							href: '/login',
+							href: '/user/login',
 							title: 'Entrar'
 						},
 						{
-							href: '/register',
+							href: '/user/register',
 							title: 'Cadastrar-se'
 						}
 					]
@@ -79,11 +79,11 @@ export default {
 					icon: 'fa fa-user',
 					child: [
 						{
-							href: '/login',
+							href: '/user/login',
 							title: 'Entrar'
 						},
 						{
-							href: '/register',
+							href: '/user/register',
 							title: 'Cadastrar-se'
 						}
 					]

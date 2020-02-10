@@ -89,7 +89,7 @@ export default {
 <style scoped>
 
 	section {
-		background-image: url('../../assets/login-fundo.jpg');
+		background-image: url('../../../assets/login-fundo.jpg');
 		background-attachment: fixed;
 		background-position: center;
 	}

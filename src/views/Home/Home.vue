@@ -48,11 +48,11 @@ export default {
 			}
 		},
 		getImgUrl (book) {
-			var images = require.context('../../assets/livros', false, /\.jpg$/)
+			var images = require.context('@/assets/livros', false, /\.jpg$/)
 			return images('./' + book)
 		},
 		details (book) {
-			return `/#/details/${book.id}`
+			return `/#/book/details/${book.id}`
 		}
 	},
 	created () {
