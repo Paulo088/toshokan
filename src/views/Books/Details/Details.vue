@@ -2,15 +2,13 @@
 <div id="detail" class="margin-menu">
 	<div class="columns">
 		<div class="column">
-			<div class="columns">
-				<div class="column"></div>
-				<div class="column">
-					<img :src="getImgUrl(book.img)">
-					<h3>{{book.name}}</h3>
-				</div>
-				<div class="column"></div>
-			</div>
-			<h5>Sinopse: {{book.sinopse}}</h5>
+			<img :src="getImgUrl(book.img)">
+			<h3>{{ book.name }}</h3>
+		</div>
+		<div class="column is-three-fifths">
+			<h5>Sinopse: {{ book.sinopse }}</h5>
+			<br>
+			<h5>R$ {{ book.price }}</h5>
 			<br>
 			<button class="button">
 				Comprar
