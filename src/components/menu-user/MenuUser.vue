@@ -102,6 +102,7 @@ export default {
 	methods: {
 		loggout () {
 			this.$store.commit('loggout')
+			this.$router.push({ name: 'home' })
 		},
 		edit () {
 			this.$router.push({ name: 'userEdit' })

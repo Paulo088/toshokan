@@ -13,13 +13,26 @@
                   <i class="fa fa-book"></i>
                 </span>
               </div>
+						</div>
+						<div class="field">
 							<label class="label">Cover</label>
               <div class="control has-icons-left">
-                <input v-model="book.img" type="text" placeholder="e.g. donald.jpg" class="input" required>
+                <input v-model="book.img" type="text" placeholder="e.g. donald.jpg" class="input">
 								<span class="icon is-small is-left">
                   <i class="fa fa-image"></i>
                 </span>
               </div>
+						</div>
+						<div class="field">
+							<label class="label">Price</label>
+              <div class="control has-icons-left">
+                <input v-model="book.price" type="text" placeholder="e.g. 10.50" class="input">
+								<span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+              </div>
+						</div>
+						<div class="field">
 							<label class="label">Sinopse</label>
               <div class="control has-icons-left">
                 <input v-model="book.sinopse" type="text" placeholder="e.g. Pato Donald tem um segredo..." class="input" required>
@@ -49,28 +62,30 @@ export default {
 			book: {
 				name: '',
 				img: '',
+				price: 0,
 				category: '',
 				sinopse: ''
 			},
 			btnSave: 'Cadastrar',
+			img: false,
 			edit: false
 		}
 	},
 	methods: {
 		async save () {
 			if (this.btnSave === 'Cadastrar') {
-				this.$services.book.post(this.book).then(data => {
+				console.log(this.book)
+				this.$services.books.post(this.book).then(data => {
 					this.$alert('Cadastrado com sucesso!')
 					this.resetInputs()
-					this.$router.push({ name: 'login' })
+					// this.$router.push({ name: 'home' })
 				}).catch(err => {
 					this.$alert('Erro ao cadastrar!')
 					console.error('register error:', err)
 				})
 			} else {
-				this.$services.users.patch(this.$store.state.user.id, this.user).then(data => {
+				this.$services.books.patch(this.$route.params.id, this.book).then(data => {
 					this.$alert('Salvo com sucesso!')
-					this.$store.commit('setUser', data.data)
 					this.$router.push({ name: 'home' })
 				}).catch(err => {
 					this.$alert('Erro ao salvar!')
@@ -88,7 +103,7 @@ export default {
 			this.btnSave = 'Salvar'
 		},
 		login () {
-			this.$router.push({ name: 'login' })
+			this.$router.push({ name: 'userLogin' })
 		},
 		verifRoute () {
 			if (this.$route.name === 'bookEdit') {
