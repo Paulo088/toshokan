@@ -2,7 +2,7 @@
 <div id="detail" class="margin-menu">
 	<div class="columns">
 		<div class="column">
-			<img :src="getImgUrl(book.img)">
+			<img class="img" :src="getImgUrl(book.img)">
 			<h3>{{ book.name }}</h3>
 		</div>
 		<div class="column is-three-fifths">
@@ -50,6 +50,10 @@ export default {
 		background-color: black;
 		color: #ffffff;
 		padding: 4rem 4rem 4rem 4rem;
+	}
+
+	.img {
+		width: 330px;
 	}
 
 	.text-color {

@@ -17,6 +17,7 @@
 							<td>{{ book.category }}</td>
 							<td>R$ {{ book.price }}</td>
 							<td>
+								<button @click="detailBook(book.id)" class="button is-primary">Detalhes</button>
 								<button @click="deleteBook(book.id)" class="button is-danger">Excluir</button>
 							</td>
 						</tr>
@@ -49,9 +50,9 @@ export default {
 			this.books = data.data
 			this.connect = true
 		}).catch(err => {
-				console.error(err)
-				this.$alert('Erro ao tentar acessar o servidor!')
-			})
+			console.error(err)
+			this.$alert('Erro ao tentar acessar o servidor!')
+		})
 	},
 	methods: {
 		async deleteBook (id) {
@@ -62,6 +63,9 @@ export default {
 				console.error(err)
 				this.$alert('Erro ao excluir livro!')
 			})
+		},
+		async detailBook (id) {
+			this.$router.push({ name: 'bookDetails', params: { id: id } })
 		},
 		removeBook (id) {
 			for (let i in this.books) {
@@ -90,5 +94,9 @@ export default {
 
 	.button-add {
 		margin: 2% 0 2% 5%;
+	}
+
+	.button {
+		margin-left: 0.2rem;
 	}
 </style>
