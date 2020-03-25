@@ -99,8 +99,10 @@ export default {
 					})
 				} else {
 					this.$services.users.patch(this.$store.state.user.id, this.user).then(data => {
+						this.user.id = this.$store.state.user.id
 						this.$alert('Salvo com sucesso!')
-						this.$store.commit('setUser', data.data)
+						this.$store.commit('setUser', this.user)
+						delete (this.user.id)
 						this.$router.push({ name: 'home' })
 					}).catch(err => {
 						this.$alert('Erro ao salvar!')

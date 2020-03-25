@@ -7,7 +7,10 @@ class UsersService extends HttpService {
 	}
 
 	login (username, password) {
-		let res = axios.get(`${super.url}?username=${username}&passwrod=${password}`)
+		let user = {}
+		user.username = username
+		user.password = password
+		let res = axios.post(super.url + '/login', user)
 		return res
 	}
 }

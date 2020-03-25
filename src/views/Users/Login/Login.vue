@@ -58,13 +58,13 @@ export default {
 		async login () {
 			if (this.username !== '' && this.password !== '') {
 				this.$services.users.login(this.username, this.password).then(data => {
-					if (!data.data || data.data.length === 0) {
+					if (!data.data || data.data === {}) {
 						this.$alert('Usuário ou senha incorreto!')
 						return
 					}
-					this.$alert('Bem vindo ' + data.data[0].name + '!')
+					this.$alert('Bem vindo ' + data.data.name + '!')
 					this.$store.commit('login')
-					this.$store.commit('setUser', data.data[0])
+					this.$store.commit('setUser', data.data)
 					this.$router.push({ name: 'home' })
 				}).catch(err => {
 					this.$alert('Erro ao logar!')
