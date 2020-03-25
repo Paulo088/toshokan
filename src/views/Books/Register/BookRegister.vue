@@ -17,7 +17,7 @@
 						<div class="field">
 							<label class="label">Cover</label>
               <div class="control has-icons-left">
-                <input v-model="book.img" type="text" placeholder="e.g. donald.jpg" class="input">
+								<input type="file" ref="fileInput" :multiple="true" @change="onFileSelected" class="input" placeholder="e.g. donald.jpg"/>
 								<span class="icon is-small is-left">
                   <i class="fa fa-image"></i>
                 </span>
@@ -66,6 +66,7 @@ export default {
 				category: '',
 				sinopse: ''
 			},
+			selectedFile: [],
 			btnSave: 'Cadastrar',
 			img: false,
 			edit: false
@@ -73,6 +74,7 @@ export default {
 	},
 	methods: {
 		async save () {
+			delete (this.book.category)
 			if (this.btnSave === 'Cadastrar') {
 				console.log(this.book)
 				this.$services.books.post(this.book).then(data => {
@@ -91,6 +93,34 @@ export default {
 					this.$alert('Erro ao salvar!')
 					console.error('save error:', err)
 				})
+			}
+		},
+		async onFileSelected (event) {
+			if (!event)
+				return
+			if (!event.target && !event.dataTransfer)
+				return
+			if (event.target.files.length <= 0 && (!event.dataTransfer || event.dataTransfer.files.length <= 0))
+				return
+			try {
+				this.selectedFile = event.target.files[0] || event.dataTransfer.files[0]
+				let date = new Date().getTime()
+				this.book.img = date + this.selectedFile.name
+				this.book.img = this.book.img.replace(' ', '_')
+
+				const formData = new FormData()
+				formData.append('file', this.selectedFile, this.book.img)
+				await this.$services.imgs.postImg(this.book.img, formData).then(data => {
+					if (data.status === 201) {
+						this.$alert('Imagem enviada!')
+					}
+				}).catch(err => {
+					this.$alert('Erro ao enviar imagem!')
+					console.error(err)
+				})
+			} catch (err) {
+				this.$alert('Erro ao enviar imagem!')
+				console.error(err)
 			}
 		},
 		resetInputs () {

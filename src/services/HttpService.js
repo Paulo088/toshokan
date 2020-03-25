@@ -25,6 +25,12 @@ export class HttpService {
 		return res
 	}
 
+	postImg (name, options) {
+		console.log(this.url + '/' + name)
+		let res = axios.post(this.url + '/' + name, options)
+		return res
+	}
+
 	put (id, data) {
 		let res = axios.put(this.url + '/' + id, data)
 		return res
